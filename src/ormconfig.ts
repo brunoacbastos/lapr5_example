@@ -6,9 +6,11 @@ const config: ConnectionOptions = {
     port: 27017,
     database: 'test',
     entities: [
-        __dirname + '/../**/*.entity{.ts,.js}',
+        __dirname + '/**/*.entity{.ts,.js}',
     ],
-    synchronize: true,
-  };
+    logging: false,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+};
 
 export = config;

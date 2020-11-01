@@ -11,24 +11,23 @@ export class LineService {
         private lineRepository: Repository<Line>
     ) { }
 
-    add(line: Line) {
-        this.lines.push(line);
-        return line;
+    add(line: Line): Promise<Line> {
+        return this.lineRepository.save(line);
     }
 
-    find(id): Line {
-        return this.lines[0];
+    find(id): Promise<Line> {
+        return this.lineRepository.findOne(id);
     }
 
-    findAll(): Line[] {
-        return this.lines;
+    findAll(): Promise<Line[]> {
+        return this.lineRepository.find();
     }
 
-    modify(id, data): Line {
-        return this.lines[0];
+    modify(id, data: Line) {
+        return this.lineRepository.update(id, data);
     }
 
-    remove(id): Line {
-        return this.lines[0];
+    remove(id) {
+        return this.lineRepository.delete(id);
     }
 }
