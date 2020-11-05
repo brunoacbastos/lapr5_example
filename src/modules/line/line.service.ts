@@ -5,7 +5,6 @@ import { Line } from '../../models/line.entity';
 @Injectable()
 export class LineService {
 
-    private readonly lines: Line[];
     constructor(
         @Inject('LINE_REPOSITORY')
         private lineRepository: Repository<Line>

@@ -1,6 +1,8 @@
 import { Body, Controller, Delete, Get, Post, Put, Query } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { LineService } from './line.service';
 
+@ApiTags('lines')
 @Controller('lines')
 export class LineController {
 

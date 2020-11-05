@@ -7,8 +7,9 @@ async function bootstrap() {
 
     const options = new DocumentBuilder()
         .setTitle('LAPR5')
-        .setDescription('LAPR5')
+        .setDescription('Laboratório Projeto 5')
         .setVersion('1.0')
+        .addTag('lines')
         .build();
     const document = SwaggerModule.createDocument(app, options);
     SwaggerModule.setup('api', app, document);
